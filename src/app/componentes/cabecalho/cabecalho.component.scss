@@ -1,0 +1,41 @@
+header {
+    padding: 10px 10px;
+    background-color: #0d6efd;
+    color: #ffff !important;
+
+    .navbar-brand {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #0d6efd !important;
+        color: #ffff !important;
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            color: #0d6efd;
+            background-color: #ffff;
+        }
+
+        a {
+            margin-left: 5px;
+            color: #ffff;
+            text-decoration: none;
+        }
+    }
+
+    .icon-logout {
+        display: flex;
+        justify-content: space-evenly;
+        width: 14vw;
+        max-width: 400px;
+    }
+}
