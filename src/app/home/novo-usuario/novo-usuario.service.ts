@@ -10,6 +10,7 @@ export class NovoUsuarioService {
 	constructor(private httpClient: HttpClient) {}
 
 	cadastranovoUsuario(novoUsuario: NovoUsuario): Observable<NovoUsuario> {
+		console.log(novoUsuario);
 		return this.httpClient.post<NovoUsuario>("http://localhost:3000/user/signup", novoUsuario);
 	}
 

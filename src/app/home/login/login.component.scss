@@ -1,8 +1,19 @@
-input,
-button {
-    margin-top: 20px;
-}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 
-button {
-    width: 100%;
+    div {
+        width: 100%;
+    }
+
+    input,
+    button {
+        margin-top: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
