@@ -14,14 +14,9 @@ export class LoginComponent {
 	constructor(private authService: AutenticacaoService, private router: Router) {}
 
 	login() {
-		this.authService.autenticar(this.usuario, this.senha).subscribe(
-			() => {
-				this.router.navigate(["animais"]);
-			},
-			(error) => {
-				alert("Usuário ou senha inválido");
-				console.error(error);
-			}
-		);
+		this.authService.autenticar(this.usuario, this.senha).subscribe({
+			next: () => this.router.navigate(["animais"]),
+			error: () => alert("Usuário ou senha inválido"),
+		});
 	}
 }

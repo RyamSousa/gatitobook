@@ -47,7 +47,7 @@ export class NovoUsuarioComponent implements OnInit {
 				error: (error) => console.error(error),
 			});
 		} else {
-			console.log("invalid");
+			console.error("invalid");
 		}
 	}
 }
