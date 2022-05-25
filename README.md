@@ -25,3 +25,17 @@ For identificate field, we can creat an "id" for it, and use this "id" to get yo
             ...
         ></app-mensagem>
 
+## Validation
+Default validation
+
+        <app-mensagem  
+			*ngIf="novoUsuarioForm.get('email')?.hasError('email') && <-- 'hasError' get especific error in field
+            novoUsuarioForm.get('email')?.touched" <-- '?. safe navigation, case the object are null or undefined'
+			mensagem="E-mail no formato incorreto"
+	    ></app-mensagem>
+
+        <app-mensagem
+			*ngIf="novoUsuarioForm.get('fullName')?.errors && <-- 'errors' get the errors in field
+            novoUsuarioForm.get('fullName')?.touched"
+			mensagem="Nome incorreto"
+	    ></app-mensagem>
