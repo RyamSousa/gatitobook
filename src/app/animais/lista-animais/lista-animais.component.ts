@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
+import { UsuarioService } from "src/app/autenticacao/usuario/usuario.service";
+import { AnimaisService } from "../animais.service";
+import { Animais } from "../animal";
 
 @Component({
-  selector: 'app-lista-animais',
-  templateUrl: './lista-animais.component.html',
-  styleUrls: ['./lista-animais.component.scss']
+	selector: "app-lista-animais",
+	templateUrl: "./lista-animais.component.html",
+	styleUrls: ["./lista-animais.component.scss"],
 })
-export class ListaAnimaisComponent implements OnInit {
+export class ListaAnimaisComponent {
+	animais!: Animais;
 
-  constructor() { }
+	constructor(private usuarioService: UsuarioService, private animaisService: AnimaisService) {}
 
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {
+		this.usuarioService.retornaUsuario().subscribe((usuario) => {
+			const username = usuario.name ?? "";
+			this.animaisService.listaDoUsuario(username).subscribe((animais) => {
+				this.animais = animais;
+			});
+		});
+	}
 }
