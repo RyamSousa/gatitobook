@@ -39,3 +39,7 @@ Default validation
             novoUsuarioForm.get('fullName')?.touched"
 			mensagem="Nome incorreto"
 	    ></app-mensagem>
+## Angular directives
+
+- <ng-template> = Defines a template that isn't displayed, but can displayed it using an "id"
+- <ng-content> = Defines where the content will be projected
