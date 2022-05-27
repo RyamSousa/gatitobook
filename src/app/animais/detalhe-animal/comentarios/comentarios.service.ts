@@ -16,7 +16,7 @@ export class ComentariosService {
 		return this.httpClient.get<Comentarios>(`${API}/photos/${id}/comments`);
 	}
 
-	inclueComentario(id: number, comentText: string): Observable<Comentario> {
-		return this.httpClient.post<Comentario>(`${API}/photos/${id}/comments`, { comentText });
+	inclueComentario(id: number, commentText: string): Observable<Comentario> {
+		return this.httpClient.post<Comentario>(`${API}/photos/${id}/comments`, { commentText });
 	}
 }
