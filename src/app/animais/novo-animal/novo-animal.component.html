@@ -1,1 +1,25 @@
-<p>novo-animal works!</p>
+<div class="container">
+	<form [formGroup]="FormularioAnimal" class="row" (submit)="upload()">
+		<div class="col-md-6 text-center">
+			<div class="form-group" *ngIf="!preview; else previewImage">
+				<button type="button" (click)="fileInput.click" class="btn btn-primary"></button>
+				<i class="fa fa-image fa-4x align-middle"></i>
+				<input
+					#fileInput
+					type="file"
+					hidden
+					formControlName="file"
+					accept="image/*"
+					(change)="gravaArquivo($event.target)"
+				/>
+				<app-mensagem
+					mensagem="Por favor selecione a foto"
+					*ngIf="!!FormularioAnimal.get('file')?.errors?.['maxlength']"
+				></app-mensagem>
+			</div>
+			<ng-template #previewImage>
+				<app-animal [url]="preview" title="Preview"></app-animal>
+			</ng-template>
+		</div>
+	</form>
+</div>
